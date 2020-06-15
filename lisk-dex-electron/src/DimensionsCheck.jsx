@@ -1,6 +1,6 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./DimensionsCheck.css";
+import React from 'react';
+import logo from './logo.svg';
+import './DimensionsCheck.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class App extends React.Component {
   }
 
   update = () => {
-    this.setState({width: window.innerWidth, height: window.innerHeight});
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
 
   render() {
@@ -22,7 +22,14 @@ class App extends React.Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Hello world! Your width is {this.state.width} and your height is {this.state.height}.
+            Hello world! Your width is
+            {' '}
+            {this.state.width}
+            {' '}
+            and your height is
+            {' '}
+            {this.state.height}
+            .
           </p>
         </header>
       </div>

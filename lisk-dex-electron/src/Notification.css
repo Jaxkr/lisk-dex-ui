@@ -1,0 +1,53 @@
+@keyframes appear {
+  from {
+    opacity: 0;
+    top: -70px;
+  }
+  to {
+    opacity: .9;
+    top: 4px;
+  }
+}
+
+@keyframes disappear {
+  from {
+    opacity: .9;
+    top: 4px;
+  }
+  to {
+    opacity: 0;
+    top: -70px;
+  }
+}
+
+.notification-container {
+  position: fixed;
+  z-index: 1000;
+  top: 4px;
+  color: #000000;
+  text-align: center;
+  left: 25%;
+  width: 50%;
+  padding: 10px;
+  border-radius: 10px;
+  background: #FFFFFF;
+}
+
+.notification-container.active {
+  animation-name: appear;
+  animation-duration: 1s;
+  top: 4px;
+  opacity: .9;
+}
+
+.notification-container.inactive {
+  animation-name: disappear;
+  animation-duration: 1s;
+  top: -70px;
+  opacity: 0;
+}
+
+.notification-container.error {
+  color: #CC0000;
+  border: 2px solid #CC0000;
+}

@@ -10,30 +10,50 @@
     font-family: 'Courier New', Courier, monospace;
     font-size: 18px;
     margin-top: 6px;
+    height: 20px;
+    padding: 5px;
     width: 90%;
     border: 1px solid grey;
     outline-color: rgb(194, 194, 194);
-    margin-bottom: 2px;
+    margin-bottom: 10px;
 }
 
-.place-order-button {
-    font-size: 20px;
-    background-color: rgb(45, 46, 56);
-    color: white;
-    font-family: 'Courier New', Courier, monospace;
-    outline-color: rgb(194, 194, 194);
+.place-buy-order-button {
+  cursor: pointer;
+  font-size: 20px;
+  color: #FFFFFF;
+  border: 0;
+  padding: 5px 15px 5px 15px;
+  outline: none;
+  width: 105px;
+  vertical-align: top;
+  background: #008800;
 }
 
-.market-limit-buttons {
-    font-size: 14px;
-    background-color: rgb(45, 46, 56);
-    color: white;
-    font-family: 'Courier New', Courier, monospace;
-    outline-color: transparent;
-    margin-bottom: 15px;
+.place-buy-order-button[disabled] {
+  cursor: default;
 }
 
-.market-limit-buttons:disabled {
-    background-color: rgb(84, 91, 175);
+.place-sell-order-button {
+  cursor: pointer;
+  font-size: 20px;
+  color: #FFFFFF;
+  border: 0;
+  padding: 5px 15px 5px 15px;
+  outline: none;
+  width: 105px;
+  vertical-align: top;
+  background: #880000;
 }
 
+.place-sell-order-button[disabled] {
+  cursor: default;
+}
+
+@media only screen and (max-width: 400px) {
+  .market-limit-tabs {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+  }
+}

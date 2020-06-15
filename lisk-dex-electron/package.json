@@ -3,43 +3,58 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "./",
-  "main": "public/electron.js",
-  "build": {
-    "appId": "com.example.electron-cra",
-    "files": [
-      "build/**/*",
-      "node_modules/**/*"
-    ],
-    "directories": {
-      "buildResources": "assets"
-    }
-  },
+  "main": "build/electron.js",
+  "author": "Jong, sacOO7",
+  "description": "Lisk DEX-UI app for exchanging tokens with sidechains",
   "dependencies": {
-    "@amcharts/amcharts4": "^4.7.18",
     "@liskhq/lisk-cryptography": "^2.2.0",
     "@liskhq/lisk-passphrase": "^2.0.3",
     "@liskhq/lisk-transactions": "^2.3.1",
-    "@types/jest": "^25.1.4",
-    "@types/node": "^13.9.0",
-    "@types/react": "^16.9.23",
-    "@types/react-dom": "^16.9.5",
     "axios": "^0.19.0",
     "cors-anywhere": "^0.4.1",
-    "electron-is-dev": "^1.1.0",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "react-scripts": "^3.3.0",
-    "typescript": "^3.8.3"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.1",
+    "recharts": "^1.8.5",
+    "runtypes": "^4.1.0",
+    "sodium-native": "^3.1.1"
   },
   "scripts": {
     "electron": "electron .",
     "start": "BROWSER=none react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start-prod": "BROWSER=none REACT_APP_PRODUCTION=true react-scripts start",
+    "build-dev": "BROWSER=none react-scripts build",
+    "build-prod": "BROWSER=none REACT_APP_PRODUCTION=true react-scripts build",
+    "test": "react-scripts test src/tests",
+    "eject": "react-scripts eject",
+    "lint": "eslint .",
+    "lint-fix": "eslint --fix .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "multi-dist": "electron-builder -mwl",
+    "spawn-interactive-pacakging-env": "./docker-electron-env.sh"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "airbnb",
+    "env": {
+      "browser": true,
+      "jest": true,
+      "es6": true
+    },
+    "parser": "babel-eslint",
+    "rules": {
+      "max-len": "off",
+      "no-underscore-dangle": "off",
+      "no-await-in-loop": "off",
+      "react/sort-comp": "off",
+      "react/destructuring-assignment": "off",
+      "no-param-reassign": "off",
+      "no-continue": "off",
+      "no-restricted-syntax": "off",
+      "react/static-property-placement": "off",
+      "react/prop-types": "off",
+      "consistent-return": "warn"
+    }
   },
   "browserslist": {
     "production": [
@@ -54,7 +69,15 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.5.0",
+    "babel-eslint": "^10.1.0",
+    "electron": "^6.0.12",
     "electron-builder": "^21.2.0",
-    "electron": "^6.0.12"
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.1"
   }
 }

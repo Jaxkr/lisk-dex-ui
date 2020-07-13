@@ -1,5 +1,7 @@
 # lisk-dex-ui
 
+This repo has been deprecated. Please use https://github.com/Leasehold/ldex-ui instead.
+
 ## Requirements
 
 - Terminal/Console
